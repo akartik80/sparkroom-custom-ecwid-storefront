@@ -8,10 +8,6 @@ let ellipsis = "...";
 
 // Add ellipsis for long products
 $('.ins-component__title-inner').text((_, oldText) => {
-    console.log("=============");
-    console.log(oldText.length);
-    console.log(PRODUCT_CARD_MAX_NAME_LENGTH + ellipsis.length);
-    console.log("=============");
     if (oldText.length > PRODUCT_CARD_MAX_NAME_LENGTH + ellipsis.length) {
         return oldText.slice(0, PRODUCT_CARD_MAX_NAME_LENGTH) + ellipsis;
     }
