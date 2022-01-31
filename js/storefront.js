@@ -6,11 +6,13 @@ document.head.appendChild(s);
 let PRODUCT_CARD_MAX_NAME_LENGTH = 40;
 let ellipsis = "...";
 
-// Add ellipsis for long products
-$('.ins-component__title-inner').text((_, oldText) => {
-    if (oldText.length > PRODUCT_CARD_MAX_NAME_LENGTH + ellipsis.length) {
-        return oldText.slice(0, PRODUCT_CARD_MAX_NAME_LENGTH) + ellipsis;
-    }
-
-    return oldText;
+Ecwid.OnAPILoaded.add(() => {
+    // Add ellipsis for long products
+    $('.ins-component__title-inner').text((_, oldText) => {
+        if (oldText.length > PRODUCT_CARD_MAX_NAME_LENGTH + ellipsis.length) {
+            return oldText.slice(0, PRODUCT_CARD_MAX_NAME_LENGTH) + ellipsis;
+        }
+        
+        return oldText;
+    });    
 });
